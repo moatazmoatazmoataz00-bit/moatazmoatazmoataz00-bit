@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Game - Trivia Party Trivia">
+  <meta name="theme-color" content="#6366f1">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Game - Trivia Party</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7428117885026987"
+       crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="game-page">
+      <!-- Header with Timer and Progress -->
+      <header class="game-header">
+        <div class="progress-info">
+          <span id="questionNumber">Question 1/5</span>
+        </div>
+        <div class="timer-display">
+          <div class="timer" id="timerDisplay">
+            <span class="timer-value" id="timerValue">30</span>
+            <span class="timer-label">s</span>
+          </div>
+        </div>
+        <div class="score-badge">
+          <span id="playerScore">0</span>
+          <span class="score-label">pts</span>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="game-main">
+        <!-- Question Section -->
+        <section class="question-section">
+          <div class="category-badge" id="categoryBadge">Category</div>
+          <div class="question-text" id="questionText">
+            Loading question...
+          </div>
+        </section>
+
+        <!-- Wager Selection Section -->
+        <section class="wager-section" id="wagerSection">
+          <div class="wager-label">How many points do you wager?</div>
+          <div class="wager-circles" id="wagerCircles"></div>
+          <button id="confirmWagerBtn" class="confirm-wager-btn" disabled>Confirm Wager</button>
+        </section>
+
+        <!-- Answers Section -->
+        <section class="answers-section">
+          <div class="answers-grid" id="answersGrid">
+            <button class="answer-btn" data-index="0" title="Answer option 1"></button>
+            <button class="answer-btn" data-index="1" title="Answer option 2"></button>
+            <button class="answer-btn" data-index="2" title="Answer option 3"></button>
+            <button class="answer-btn" data-index="3" title="Answer option 4"></button>
+          </div>
+        </section>
+
+        <!-- Live Scoreboard (Mini) -->
+        <section class="mini-scoreboard">
+          <h3>Leaderboard</h3>
+          <div class="scoreboard-list" id="liveScoreboard">
+            <div class="scoreboard-item">Loading...</div>
+          </div>
+        </section>
+
+        <!-- Game Description -->
+        <div class="game-description">
+          <p>This is an educational, skill-based multiplayer trivia platform. Enjoy the game and don't cheat!</p>
+        </div>
+
+        <!-- Ads Placeholder -->
+        <div class="ads-container ads-inline" id="adsInlineGame">
+          <div class="ads-placeholder">
+            <span class="ads-label">Advertisement</span>
+          </div>
+        </div>
+      </main>
+
+      <!-- Status Bar -->
+      <div class="game-status" id="gameStatus"></div>
+      
+      <!-- Footer -->
+      <footer style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; text-align: center; font-size: 0.85rem; color: #666;">
+        <a href="privacy-policy.html" style="color: #6366f1; text-decoration: none; margin: 0 1rem;">Privacy Policy</a> | 
+        <a href="terms-of-service.html" style="color: #6366f1; text-decoration: none; margin: 0 1rem;">Terms of Service</a> | 
+        <a href="contact.html" style="color: #6366f1; text-decoration: none; margin: 0 1rem;">Contact</a>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Results Modal -->
+  <div id="resultsModal" class="modal hidden">
+    <div class="modal-content modal-lg">
+      <div class="modal-body">
+        <div id="resultsContent"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <script src="js/client.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

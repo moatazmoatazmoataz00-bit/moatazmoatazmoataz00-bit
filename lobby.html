@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Game Lobby - Trivia Party. Join multiplayer trivia games, configure settings, and prepare for real-time competition with friends and players worldwide.">
+  <meta name="keywords" content="game lobby, multiplayer trivia, trivia games, online quiz">
+  <meta name="author" content="Trivia Party">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Lobby - Trivia Party</title>
+  <link rel="canonical" href="https://yourdomain.com/lobby.html">
+  <link rel="stylesheet" href="css/styles.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7428117885026987" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="app-wrapper">
+    <!-- Global Header -->
+    <header class="app-header">
+      <div class="header-content">
+        <a href="index.html" class="app-logo">
+          <span>🎮</span> Trivia Party
+        </a>
+        <nav class="app-nav">
+          <a href="index.html">Home</a>
+          <a href="how-to-play.html">How to Play</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="app-main">
+      <div class="page-layout">
+        <!-- Primary Content -->
+        <div class="main-content">
+          <div class="lobby-page">
+            <!-- Lobby Header & Info -->
+            <div class="lobby-header">
+              <h1 class="lobby-title">Game Lobby</h1>
+              <div class="room-info">
+                <span class="room-code-label">Room Code:</span>
+                <span class="room-code-display" id="roomCodeDisplay">----</span>
+              </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="lobby-main">
+              <div class="lobby-grid">
+                <!-- Players Section -->
+                <section class="players-section">
+                  <h2>👥 Players</h2>
+                  <div class="players-list" id="playersList">
+                    <div class="player-item">
+                      <div class="player-avatar">👤</div>
+                      <div class="player-info">
+                        <div class="player-name">Loading...</div>
+                        <div class="player-role"></div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Settings Section (Host Only) -->
+                <section class="settings-section" id="settingsSection">
+                  <h2>⚙️ Game Settings</h2>
+                  
+                  <div class="setting-group">
+                    <label for="roundsSelect">Number of Rounds:</label>
+                    <select id="roundsSelect" class="select-input">
+                      <option value="3">3 Rounds</option>
+                      <option value="5" selected>5 Rounds</option>
+                      <option value="10">10 Rounds</option>
+                      <option value="15">15 Rounds</option>
+                      <option value="25">25 Rounds</option>
+                    </select>
+                  </div>
+
+                  <div class="setting-group">
+                    <label for="categorySelect">Category (Optional):</label>
+                    <select id="categorySelect" class="select-input">
+                      <option value="">Mixed Categories</option>
+                      <option value="Science">Science</option>
+                      <option value="History">History</option>
+                      <option value="Geography">Geography</option>
+                      <option value="Sports">Sports</option>
+                      <option value="Entertainment">Entertainment</option>
+                    </select>
+                  </div>
+
+                  <button id="startGameBtn" class="btn btn-primary btn-lg">
+                    🚀 Start Game
+                  </button>
+                </section>
+
+                <!-- Waiting Section (Player) -->
+                <section class="waiting-section" id="waitingSection">
+                  <div class="waiting-content">
+                    <div class="waiting-icon">⏳</div>
+                    <p class="waiting-text">Waiting for host to start the game...</p>
+                    <div class="pulse-animation"></div>
+                  </div>
+                </section>
+
+                <!-- Game Rules & Fair Play Info -->
+                <section class="game-info-section" id="gameInfoSection">
+                  <h3>⚖️ Fair Play & Game Rules</h3>
+                  <div class="game-info-box">
+                    <p><strong>🎯 How Scoring Works:</strong> Earn points by answering correctly and quickly. Speed bonus rewards fast, accurate responses. Wrong answers = 0 points (no penalty).</p>
+                    <p><strong>⏱️ Fair Timing:</strong> All players see questions simultaneously and have equal time to answer. No one has an advantage.</p>
+                    <p><strong>💯 Question Integrity:</strong> All players see the same questions in the same order. Random selection ensures fairness.</p>
+                    <p><strong>🔒 No Real Money:</strong> <strong>Trivia Party is 100% free, 100% fun.</strong> There are no real-money transactions, gambling, or wagering. Scores are for entertainment and bragging rights only.</p>
+                    <p><strong>👥 Multiplayer Conduct:</strong> Keep it friendly and respectful. Compete fairly and enjoy the game with others.</p>
+                    <p><strong>📖 Learn the Rules:</strong> Visit our <a href="how-to-play.html" class="game-info-link">How to Play guide</a> for detailed rules and strategies.</p>
+                  </div>
+                </section>
+              </div>
+
+              <!-- Button to Leave Room -->
+              <div class="lobby-footer-buttons">
+                <button id="leaveRoomBtn" class="btn btn-outline lobby-leave-btn">
+                  ← Leave Room
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Ads -->
+        <aside class="sidebar-ads">
+          <div class="ads-placeholder">
+            <span class="ads-label">Advertisement</span>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="app-footer">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="privacy-policy.html">Privacy Policy</a> | 
+          <a href="terms-of-service.html">Terms of Service</a> | 
+          <a href="contact.html">Contact</a> |
+          <a href="about.html">About Us</a>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2024 Trivia Party. All rights reserved. | No real money involved. | <a href="privacy-policy.html" class="footer-link">Cookies & Ads Policy</a></p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Error Modal -->
+  <div id="errorModal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Error</h2>
+        <button class="modal-close" id="closeErrorBtn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p id="errorMessage"></p>
+      </div>
+      <div class="modal-footer">
+        <button id="errorOkBtn" class="btn btn-primary">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <script src="js/client.js"></script>
+  <script src="js/lobby.js"></script>
+</body>
+</html>
